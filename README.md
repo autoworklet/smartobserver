@@ -32,7 +32,7 @@ As digital interfaces become more integral to our lives, the need for systems th
 
 # Login to GCP (this is used to call Gemini Vertex API)
 
-    # need to install gcloud https://cloud.google.com/sdk/docs/install
+    # need to install gcloud https://cloud.google.com/sdk/docs/install and enable the Vertex AI API https://cloud.google.com/vertex-ai/docs/start/cloud-environment
     poetry run gcloud auth login
 
 # Run the app
