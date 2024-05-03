@@ -1,4 +1,8 @@
 
+# SmartObserver
+
+As digital interfaces become more integral to our lives, the need for systems that understand and react to user behavior beyond basic inputs grows. SmartObserver bridges this gap by leveraging Google's Generative AI to intuitively interpret user intentions and offers real-time suggestions to assist the user in completing tasks more efficiently
+
 # Install packages (only test on MacOS with Apple Silicon currently)
 
     # you need to install poetry first
@@ -26,10 +30,17 @@
     poetry run pip3 install pyautogui pyobjc-core pyobjc-framework-Quartz
     poetry run pip3 install pyobjc-framework-ApplicationServices
 
-# download hf models
+# Login to GCP (this is used to call Gemini Vertex API)
 
-    transformers-cli download distil-whisper/distil-small.en --cache-dir models
+    # need to install gcloud https://cloud.google.com/sdk/docs/install
+    poetry run gcloud auth login
 
-# run
+# Run the app
+
+This will run the app. It will take a few seconds in the first run to compile cpp extensions.
 
     poetry run python main.py
+
+# Download hf models
+
+    transformers-cli download distil-whisper/distil-small.en --cache-dir models
