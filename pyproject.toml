@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "autoworkletv1"
+version = "0.1.0"
+description = ""
+authors = ["Surat Teerapittayanon <steerapi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+kivy = "^2.3.0"
+ninja = "^1.11.1.1"
+matplotlib = "^3.8.4"
+plyer = "^2.1.0"
+pyobjus = "^1.2.3"
+bson = "^0.5.10"
+opencv-python = "^4.9.0.80"
+kivymd = "^1.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

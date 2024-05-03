@@ -1,0 +1,97 @@
+#:kivy 1.0.9
+
+<AutoWorklet>:
+    status_label: status_label
+    replay_event_data: replay_event_data
+    start_record_button: start_record_button
+    replay_button: replay_button
+    generate_button: generate_button
+    save_button: save_button
+    load_button: load_button
+    screenshot_image: screenshot_image
+    events_label: events_label
+    generated_tasks: generated_tasks
+
+    orientation: 'vertical'
+    size_hint: 1, 1    
+    MDBoxLayout:
+
+        orientation: 'horizontal'
+        size_hint: 1, 0.2
+        Image:
+            size_hint: 0.10, 1
+            source: 'assets/autoworklet.png'
+        MDIconButton:
+            id: start_record_button
+            on_press: root.start_stop_record_pressed()
+            icon: "record"
+            style: "small"
+            icon_color: "red"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDIconButton:
+            id: replay_button
+            on_press: root.replay_interrupt_pressed()
+            icon: "play"
+            style: "small"
+            icon_color: "green"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDLabel:
+            id: status_label
+            text: 'Stopped'
+            size_hint: 0.15, 1
+            font_style: 'Caption'
+        MDLabel:
+            id: replay_event_data
+            text: ''
+            font_style: 'Caption'
+
+        Image:
+            id: screenshot_image
+            size_hint: 0.15, 1
+            source: 'assets/autoworklet.png'
+
+        MDIconButton:
+            id: generate_button
+            on_press: root.generate_pressed()
+            style: "small"
+            icon: "refresh"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDIconButton:
+            id: save_button
+            on_press: root.save_pressed()
+            style: "small"
+            icon: "content-save"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        MDIconButton:
+            id: load_button
+            on_press: root.load_pressed()
+            style: "small"
+            icon: "folder-open"
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+    MDBoxLayout:
+        orientation: 'horizontal'
+        size_hint: 1, 0.95
+        padding: dp(10)
+        MDBoxLayout:
+            size_hint: 0.2, 1
+            padding: dp(10)
+            MDTextField:
+                id: events_label
+                multiline: True
+                text: ''
+                hint_text: 'Events'
+                size_hint: 0.5, 1
+                style: "small"
+                mode: "rectangle"
+        MDBoxLayout:
+            size_hint: 0.8, 1
+            padding: dp(10)
+            MDTextField:
+                id: generated_tasks
+                multiline: True
+                text: ''
+                hint_text: 'Inferred Tasks and Suggestions'
+                size_hint: 0.5, 1
+                style: "small"
+                mode: "rectangle"
+
